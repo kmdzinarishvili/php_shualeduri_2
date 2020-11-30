@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//})->middleware('auth');
 
 Route::get('/users/login', [\App\Http\Controllers\LoginController::class, 'login'])->name("login");
 Route::post('/users/post-login', [\App\Http\Controllers\LoginController::class, 'postLogin'])->name("post.login");

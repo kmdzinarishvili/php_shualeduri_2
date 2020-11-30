@@ -26,19 +26,7 @@ class LoginController extends Controller
             $questions = Question::all();
             return redirect()->route('quiz', compact($user, $questions));
         }else{
-            $questions = Question::all();
-            $user = new User();
-            $user->username = $credentials["username"];
-            $user->password = $credentials['password'];
-            $user->email = 'tester@email.com';
-            $user->isAdmin = true;
-            auth()->login($user);
-            Auth::login($user);
-            return view('quiz')->with('questions', $questions)->with('user', $user);
-            //compact($user, $questions));
-//            return redirect()->route('quiz', compact($user, $questions));
-
-//            abort(403);
+            abort(403);
         }
     }
 
